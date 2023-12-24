@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyWeather</string>
+<!-- 按钮 -->
+    <string name="error_button">Tap the screen to reload</string>
+
+<!-- 天气现象 -->
+    <string name="sky_clear">Clear</string>
+    <string name="sky_partly_cloudy">Partly cloudy</string>
+    <string name="sky_cloudy">Cloudy</string>
+    <string name="sky_strong_wind">Strong wind</string>
+    <string name="sky_light_rain">Light rain</string>
+    <string name="sky_moderate_rain">Moderate rain</string>
+    <string name="sky_heavy_rain">Heavy rain</string>
+    <string name="sky_rainstorm">Rainstorm</string>
+    <string name="sky_thunderstorm">Thunderstorm</string>
+    <string name="sky_light_snow">Light snow</string>
+    <string name="sky_moderate_snow">Moderate snow</string>
+    <string name="sky_heavy_snow">Heavy snow</string>
+    <string name="sky_blizzard">Blizzard</string>
+    <string name="sky_mild_haze">Mild haze</string>
+    <string name="sky_moderate_smog">Moderate smog</string>
+    <string name="sky_heavy_smog">Heavy smog</string>
+    <string name="sky_fog">Fog</string>
+    <string name="sky_dust">Dust</string>
+    <string name="sky_sand">Sand</string>
+
+<!-- 空气质量等级说明 -->
+    <string name="airQuality_excellent">Excellent</string>
+    <string name="airQuality_good">Good</string>
+    <string name="airQuality_mild">Mild</string>
+    <string name="airQuality_moderate">Moderate</string>
+    <string name="airQuality_severe">Severe</string>
+    <string name="airQuality_serious">Serious</string>
+
+<!-- 生活指数 -->
+    <string name="airQuality_null">No Data</string>
+    <string name="life_car_wash">CarWash</string>
+    <string name="life_dressing">Dressing</string>
+    <string name="life_ultraviolet">Ultraviolet</string>
+    <string name="life_travel">Travel</string>
+    <string name="life_cold">Cold</string>
+    <string name="life_sports">Sports</string>
+
+<!-- 气象说明 PopupMenu Title text -->
+    <string name="weather_description_wind_title">About wind direction and speed</string>
+    <string name="weather_description_humidity_title">About humidity</string>
+    <string name="weather_description_apparent_temperature_title">About Apparent temperature</string>
+    <string name="weather_description_pressure_title">About Air pressure</string>
+
+<!-- 气象说明 PopupMenu Content text -->
+    <string name="weather_description_wind_info">Wind is a form of motion in the Earth\'s atmosphere and it is a vector. The distance that the wind moves in unit time is called the wind speed, and the unit is m/s or km/h; the moving direction is called the wind direction.</string>
+    <string name="weather_description_humidity_info">The degree of dryness and humidity of the air, or the physical quantity indicating how much water vapor it contains, is called humidity. The mass of water vapor contained in a unit volume of air is called absolute humidity, and the percentage of the absolute humidity of the air at a certain temperature and the saturated pressure at the same temperature is called relative humidity.</string>
+    <string name="weather_description_apparent_temperature_info">Somatosensory temperature is a member of the big family of temperature. It refers to the temperature that everyone feels in contact with the outside world. Many factors will affect the somatosensory temperature, such as humidity, wind, personal clothing, sunshine, etc.</string>
+    <string name="weather_description_pressure_info">Air pressure is the abbreviation of atmospheric pressure, which is the atmospheric pressure acting on a unit area, which is equal to the weight of a vertical air column extending upward to the upper boundary of the atmosphere per unit area. Air pressure is related to altitude, temperature and other conditions. Generally decreases with increasing height. In meteorology, kilopascals (kPa) or hectopascals (hpa) are generally used as units.</string>
+
+</resources>
