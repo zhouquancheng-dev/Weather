@@ -1,11 +1,13 @@
 package com.zqc.model.weather
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 import java.util.*
 
 /**
  * 天级别预报数据base
  */
+@JsonClass(generateAdapter = true)
 data class DailyResponse(val daily: Daily) {
 
     /**
@@ -20,13 +22,13 @@ data class DailyResponse(val daily: Daily) {
      */
     data class Daily(
         val status: String,
-        @SerializedName("astro") val astronomy: List<Astronomy>,
+        @Json(name = "astro") val astronomy: List<Astronomy>,
         val temperature: List<Temperature>,
-        @SerializedName("skycon_08h_20h") val skyCon08h20h: List<SkyCon>,
-        @SerializedName("skycon_20h_32h") val skyCon20h32h: List<SkyCon>,
+        @Json(name = "skycon_08h_20h") val skyCon08h20h: List<SkyCon>,
+        @Json(name = "skycon_20h_32h") val skyCon20h32h: List<SkyCon>,
         val wind: List<Wind>,
-        @SerializedName("air_quality") val airQuality: AirQuality,
-        @SerializedName("life_index") val lifeIndex: LifeIndex
+        @Json(name = "air_quality") val airQuality: AirQuality,
+        @Json(name = "life_index") val lifeIndex: LifeIndex
     ) {
 
         /**

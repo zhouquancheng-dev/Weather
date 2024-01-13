@@ -1,10 +1,12 @@
 package com.zqc.model.weather
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * 预警数据Bean
  */
+@JsonClass(generateAdapter = true)
 data class AlertResponse(val alert: Alert) {
 
     /**
@@ -16,7 +18,7 @@ data class AlertResponse(val alert: Alert) {
     data class Alert(
         val status: String,
         val content: List<AlertDesc>,
-        @SerializedName("adcodes") val adCodes: List<AlertCodes>,
+        @Json(name = "adcodes") val adCodes: List<AlertCodes>,
     ) {
         /**
          * @param province  省，如"广东省"
@@ -42,15 +44,15 @@ data class AlertResponse(val alert: Alert) {
             val description: String,
             val regionId: String,
             val county: String,
-            @SerializedName("pubtimestamp") val pubTimeStamp: Long,
-            @SerializedName("latlon") val latLon: List<Float>,
+            @Json(name = "pubtimestamp") val pubTimeStamp: Long,
+            @Json(name = "latlon") val latLon: List<Float>,
             val city: String,
             val alertId: String,
             val title: String,
-            @SerializedName("adcode") val adCode: String,
+            @Json(name = "adcode") val adCode: String,
             val source: String,
             val location: String,
-            @SerializedName("request_status") val requestStatus: String,
+            @Json(name = "request_status") val requestStatus: String,
         )
 
         /**
@@ -58,7 +60,7 @@ data class AlertResponse(val alert: Alert) {
          * @param name 区域
          */
         data class AlertCodes(
-            @SerializedName("adcode") val adCode: Int,
+            @Json(name = "adcode") val adCode: Int,
             val name: String,
         )
     }

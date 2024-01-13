@@ -1,22 +1,24 @@
 package com.zqc.model.weather.air
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 import java.util.*
 
 /**
  * 墨迹天气生活指数Bean
  */
+@JsonClass(generateAdapter = true)
 data class LiveIndexResponse(val code: Int, val data: DataEntity, val msg: String) {
 
     data class DataEntity(val city: CityDesc, val liveIndex: Map<String, List<LiveIndex>>) {
 
         data class CityDesc(
             val cityId: Int,
-            @SerializedName("counname") val counName: String,
-            @SerializedName("ianatimezone") val ianaTimeZone: String,
+            @Json(name = "counname") val counName: String,
+            @Json(name = "ianatimezone") val ianaTimeZone: String,
             val name: String,
-            @SerializedName("pname") val pName: String,
-            @SerializedName("secondaryname") val secondaryName: String,
+            @Json(name = "pname") val pName: String,
+            @Json(name = "secondaryname") val secondaryName: String,
             val timezone: String
         )
 
@@ -27,7 +29,7 @@ data class LiveIndexResponse(val code: Int, val data: DataEntity, val msg: Strin
             val level: String,
             val name: String,
             val status: String,
-            @SerializedName("updatetime") val updateTime: Date
+            @Json(name = "updatetime") val updateTime: Date
         )
 
     }

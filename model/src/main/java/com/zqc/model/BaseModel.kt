@@ -1,6 +1,7 @@
 package com.zqc.model
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * 彩云天气 Base bean
@@ -16,15 +17,16 @@ import com.google.gson.annotations.SerializedName
  * @param result 子bean
  * @param primary
  */
+@JsonClass(generateAdapter = true)
 data class BaseModel<T>(
     val status: String,
-    @SerializedName("api_version") val apiVersion: String,
-    @SerializedName("api_status") val apiStatus: String,
+    @Json(name = "api_version") val apiVersion: String,
+    @Json(name = "api_status") val apiStatus: String,
     val lang: String,
     val unit: String,
-    @SerializedName("tzshift") val tzShift: Int,
+    @Json(name = "tzshift") val tzShift: Int,
     val timezone: String,
-    @SerializedName("server_time") val serverTime: Long,
+    @Json(name = "server_time") val serverTime: Long,
     val location: List<Float>,
     val result: T,
     val primary: Int

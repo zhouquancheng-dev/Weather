@@ -1,10 +1,12 @@
 package com.zqc.model.weather.city
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * 搜索全球城市Bean
  */
+@JsonClass(generateAdapter = true)
 data class PlaceResponse(
     val status: String,
     val places: List<PlaceEntity>,
@@ -20,8 +22,8 @@ data class PlaceResponse(
         val id: String,
         val name: String,
         val location: LocationEntity,
-        @SerializedName("formatted_address") val address: String,
-        @SerializedName("place_id") val placeId: String
+        @Json(name = "formatted_address") val address: String,
+        @Json(name = "place_id") val placeId: String
     )
 
     /**

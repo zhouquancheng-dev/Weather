@@ -1,10 +1,12 @@
 package com.zqc.model.weather
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * 实况预报数据base
  */
+@JsonClass(generateAdapter = true)
 data class RealtimeResponse(val realtime: Realtime) {
 
     /**
@@ -23,13 +25,13 @@ data class RealtimeResponse(val realtime: Realtime) {
         val status: String,
         val temperature: Float,
         val humidity: Float,
-        @SerializedName("skycon") val skyCon: String,
+        @Json(name = "skycon") val skyCon: String,
         val visibility: Float,
         val wind: Wind,
         val pressure: Float,
-        @SerializedName("apparent_temperature") val apparentTemperature: Float,
-        @SerializedName("air_quality") val airQuality: AirQuality,
-        @SerializedName("life_index") val lifeIndex: LifeIndex
+        @Json(name = "apparent_temperature") val apparentTemperature: Float,
+        @Json(name = "air_quality") val airQuality: AirQuality,
+        @Json(name = "life_index") val lifeIndex: LifeIndex
     ) {
 
         /**

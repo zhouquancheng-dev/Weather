@@ -1,11 +1,13 @@
 package com.zqc.model.weather
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 import java.util.*
 
 /**
  * 小时级别预报数据base
  */
+@JsonClass(generateAdapter = true)
 data class HourlyResponse(val hourly: Hourly) {
 
     /**
@@ -19,8 +21,8 @@ data class HourlyResponse(val hourly: Hourly) {
         val status: String,
         val temperature: List<Temperature>,
         val wind: List<Wind>,
-        @SerializedName("skycon") val skyCon: List<SkyCon>,
-        @SerializedName("air_quality") val airQuality: AirQuality
+        @Json(name = "skycon") val skyCon: List<SkyCon>,
+        @Json(name = "air_quality") val airQuality: AirQuality
     ) {
 
         /**

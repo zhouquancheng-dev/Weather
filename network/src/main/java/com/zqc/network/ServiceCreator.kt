@@ -1,11 +1,13 @@
 package com.zqc.network
 
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.zqc.mdoel.weather.appcode
 import com.zqc.mdoel.weather.authorization
 import okhttp3.Headers
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 object ServiceCreator {
@@ -37,7 +39,7 @@ object ServiceCreator {
         return RetrofitBuild(
             url = CAI_YUN_URL,
             client = mOkHttpClient.build(),
-            gsonConverterFactory = GsonConverterFactory.create()
+            moshiConverterFactory = MoshiConverterFactory.create(moshi)
         ).retrofitCaiYun
     }
 
@@ -56,7 +58,7 @@ object ServiceCreator {
         return RetrofitBuild(
             url = MO_JI_URL,
             client = mOkHttpClient.build(),
-            gsonConverterFactory = GsonConverterFactory.create()
+            moshiConverterFactory = MoshiConverterFactory.create(moshi)
         ).retrofitMoJi
     }
 }
@@ -64,18 +66,18 @@ object ServiceCreator {
 private class RetrofitBuild(
     url: String,
     client: OkHttpClient,
-    gsonConverterFactory: GsonConverterFactory
+    moshiConverterFactory: MoshiConverterFactory
 ) {
     val retrofitCaiYun: Retrofit = Retrofit.Builder().apply {
         baseUrl(url)
         client(client)
-        addConverterFactory(gsonConverterFactory)
+        addConverterFactory(moshiConverterFactory)
     }.build()
 
     val retrofitMoJi: Retrofit = Retrofit.Builder().apply {
         baseUrl(url)
         client(client)
-        addConverterFactory(gsonConverterFactory)
+        addConverterFactory(moshiConverterFactory)
     }.build()
 }
 
@@ -89,3 +91,9 @@ private fun getMoJiHeaders(): Map<String, String> {
        "Content-Type" to "application/x-www-form-urlencoded; charset=utf-8"
    )
 }
+
+// 添加 KotlinJsonAdapterFactory以支持 Kotlin 数据类的解析
+// 使用 Moshi 解析 Kotlin 数据类需要添加 KotlinJsonAdapterFactory() 以支持数据类中定义的泛型
+private val moshi: Moshi = Moshi.Builder()
+    .add(KotlinJsonAdapterFactory())
+    .build()
