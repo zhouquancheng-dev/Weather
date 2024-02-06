@@ -5,13 +5,12 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.navigation.compose.rememberNavController
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
 import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
@@ -32,7 +31,7 @@ fun WeatherApplication() {
         val navController = rememberNavController(bottomSheetNavigator)
         Scaffold(
             modifier = Modifier.fillMaxSize(),
-            backgroundColor = MaterialTheme.colors.background
+            containerColor = MaterialTheme.colorScheme.background
         ) { innerPaddingModifier ->
             AppNavGraph(
                 modifier = Modifier.padding(innerPaddingModifier),

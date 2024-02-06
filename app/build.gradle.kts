@@ -128,4 +128,6 @@ dependencies {
 
     // 启动屏幕
     implementation(libs.androidx.splashscreen)
+
+    implementation(libs.shreyaspatil.capturable)
 }
