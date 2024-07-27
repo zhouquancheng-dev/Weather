@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -33,10 +34,6 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        // https://maven.google.com/web/index.html?q=androidx.compose.compiler#androidx.compose.compiler:compiler
-        kotlinCompilerExtensionVersion = "1.5.8"
     }
 }
 

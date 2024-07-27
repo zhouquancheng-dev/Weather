@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.dagger.hilt.android)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.google.devtools.ksp)
     kotlin("kapt")
 }
@@ -44,10 +45,6 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        // https://maven.google.com/web/index.html?q=androidx.compose.compiler#androidx.compose.compiler:compiler
-        kotlinCompilerExtensionVersion = "1.5.8"
     }
     packaging {
         resources {

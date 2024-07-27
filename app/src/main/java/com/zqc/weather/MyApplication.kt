@@ -16,17 +16,17 @@ class MyApplication : Application() {
      * 要线程安全需要同步锁synchronized；使用同步锁应双重检查，减少同步粒度
      */
     companion object {
-        private var instances: Application? = null
+        private var instances: MyApplication? = null
         /**
          * 全局context
          */
-        fun getInstance(): Application {
+        fun getInstance(): MyApplication {
             // 第一层检查
             if (instances == null) {
-                synchronized(Application::class.java) {
+                synchronized(MyApplication::class.java) {
                     // 第二层检查
                     if (instances == null) {
-                        instances = Application()
+                        instances = MyApplication()
                     }
                 }
             }

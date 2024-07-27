@@ -1,33 +1,33 @@
 # alphabetization   Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
 [versions]
-agp = "8.5.0-alpha08"
-appcompat = "1.7.0-beta01"
+agp = "8.7.0-alpha03"
+appcompat = "1.7.0"
 android-material = "1.12.0"
-androidx-test-ext-junit = "1.1.5"
-activity-compose = "1.9.0"
+androidx-test-ext-junit = "1.2.1"
+activity-compose = "1.9.1"
 constraintlayout = "2.1.4"
 core-ktx = "1.13.1"
-compose-bom = "2024.05.00"
-coil-bom = "2.6.0"
-coroutines-android = "1.8.0"
+compose-bom = "2024.06.00"
+coil-bom = "2.7.0"
+coroutines-android = "1.8.1"
 dagger-hilt-android = "2.51.1"
-devtools-ksp = "1.9.23-1.0.20"
+devtools-ksp = "2.0.0-1.0.23"
 dataStore = "1.1.1"
-espresso-core = "3.5.1"
+espresso-core = "3.6.1"
 google-accompanist = "0.34.0"
 hilt-navigation-compose = "1.2.0"
 hilt-android = "2.51.1"
 hilt-android-compiler = "2.51.1"
-junit-jupiter-api = "5.10.1"
-kotlin = "1.9.23"
-kotlin-serialization = "1.9.23"
-kotlin-serialization-json = "1.6.3"
+junit-jupiter-api = "5.10.3"
+kotlin = "2.0.0"
+kotlin-serialization = "2.0.0"
+kotlin-serialization-json = "1.7.1"
 kotlin-serialization-converter = "1.0.0"
-lottie = "6.4.0"
-lifecycle-runtime-ktx = "2.7.0"
-lifecycle-viewmodel-ktx = "2.7.0"
-lifecycle-runtime-compose = "2.7.0"
-lifecycle-viewmodel-compose = "2.7.0"
+lottie = "6.4.1"
+lifecycle-runtime-ktx = "2.8.4"
+lifecycle-viewmodel-ktx = "2.8.4"
+lifecycle-runtime-compose = "2.8.4"
+lifecycle-viewmodel-compose = "2.8.4"
 moshi = "1.15.1"
 material3-android = "1.2.1"
 navigation-compose = "2.7.7"
@@ -39,11 +39,6 @@ threetenabp = "1.4.7"
 # github Open source library
 capturable = "2.1.0"
 jiaozivideoplayer = "7.7.2.3300"
-aria-core = "3.8.16"
-aria-compiler = "3.8.16"
-awsAndroidSdkS3 = "2.74.0"
-awsAndroidSdkMobileClient = "2.74.0"
-itextCore = "8.0.2"
 
 # alphabetization   Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
 [plugins]
@@ -56,6 +51,9 @@ google-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.re
 google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "devtools-ksp" }
 # https://mvnrepository.com/artifact/org.jetbrains.kotlin.android/org.jetbrains.kotlin.android.gradle.plugin
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+# 指南 https://developer.android.com/develop/ui/compose/compiler?hl=zh-cn
+# Compose Compiler Gradle 插件仅适用于 Kotlin 2.0 及更高版本，同 kotlin 版本相同
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 # alphabetization   Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
 [libraries]
@@ -159,9 +157,3 @@ squareup-moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-ko
 # github Open source library
 shreyaspatil-capturable = { module = "dev.shreyaspatil:capturable", version.ref = "capturable" }
 jzvd-jiaozivideoplayer = { module = "cn.jzvd:jiaozivideoplayer", version.ref = "jiaozivideoplayer" }
-laoyuyu-aria-core = { module = "me.laoyuyu.aria:core", version.ref = "aria-core" }
-laoyuyu-aria-compiler = { module = "me.laoyuyu.aria:compiler", version.ref = "aria-compiler" }
-aws-android-sdk-mobile-client = { module = "com.amazonaws:aws-android-sdk-mobile-client", version.ref = "awsAndroidSdkMobileClient" }
-aws-android-sdk-s3 = { module = "com.amazonaws:aws-android-sdk-s3", version.ref = "awsAndroidSdkS3" }
-# https://mvnrepository.com/artifact/com.itextpdf/itext-core
-itextpdf-itext-core = { module = "com.itextpdf:itext-core", version.ref = "itextCore" }
